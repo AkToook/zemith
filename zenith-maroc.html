@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zénith IA Maroc — Solutions d'Intelligence Artificielle Sur Mesure pour Entreprises</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --white:#fff;--bg:#f8f8fc;--bg2:#f0f0f8;--bg3:#e0e0f0;
+  --dark:#0a0a1a;--dark2:#12122a;--ink2:#4a4a6a;--ink3:#8888aa;
+  --purple:#5b4fff;--purple2:#7c6fff;--purple3:rgba(91,79,255,.1);--purpleb:rgba(91,79,255,.2);
+  --purple-dark:#3a2dd4;--cyan:#00d4ff;
+  --green:#22c55e;--greenl:rgba(34,197,94,.1);--greenb:rgba(34,197,94,.25);
+  --sans:'Plus Jakarta Sans',sans-serif;--display:'Syne',sans-serif;
+  --shadow:0 2px 16px rgba(10,10,26,.07);--shadow2:0 12px 48px rgba(10,10,26,.12);
+  --border:#e8e8f4;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--dark);font-family:var(--sans);overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:68px;display:flex;align-items:center;padding:0 6vw;justify-content:space-between}
+.nav-logo{font-family:var(--display);font-size:20px;font-weight:800;letter-spacing:-.04em;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-center{display:flex;gap:2rem}
+.nav-center a{font-size:13.5px;color:var(--ink2);text-decoration:none;font-weight:500;transition:color .18s}
+.nav-center a:hover{color:var(--purple)}
+.nav-right{display:flex;gap:.75rem;align-items:center}
+.nav-cta{background:var(--purple);color:#fff;padding:.6rem 1.4rem;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--purple-dark);box-shadow:0 6px 20px rgba(91,79,255,.35)}
+.nav-back{font-size:12px;color:var(--ink3);text-decoration:none;padding:.5rem 1rem;border:1px solid var(--border);border-radius:8px;transition:all .2s}
+.nav-back:hover{border-color:var(--purpleb);color:var(--purple)}
+
+/* HERO */
+.hero{padding:6rem 6vw 5rem;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--white) 0%,var(--bg) 100%)}
+.hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(91,79,255,.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--purple3);border:1px solid var(--purpleb);border-radius:100px;padding:.4rem 1.1rem;font-size:12px;font-weight:700;color:var(--purple);margin-bottom:2rem;letter-spacing:.04em}
+.hero h1{font-family:var(--display);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:800;letter-spacing:-.05em;line-height:1.02;margin-bottom:1.5rem;color:var(--dark)}
+.hero h1 span{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:18px;color:var(--ink2);line-height:1.75;margin-bottom:2.5rem;max-width:580px;margin-left:auto;margin-right:auto}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.btn-main{background:var(--purple);color:#fff;padding:1rem 2.2rem;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-main:hover{background:var(--purple-dark);transform:translateY(-2px);box-shadow:0 12px 36px rgba(91,79,255,.35)}
+.btn-outline{border:1.5px solid var(--border);color:var(--ink2);padding:1rem 2rem;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-outline:hover{border-color:var(--purpleb);color:var(--purple)}
+.hero-img{margin-top:3.5rem;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow2);background:linear-gradient(135deg,var(--dark),var(--dark2));height:380px;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-img::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 40%,rgba(91,79,255,.3),transparent 60%)}
+.hero-img-content{position:relative;z-index:1;text-align:center}
+.hero-img-content div{font-family:var(--display);font-size:4rem;margin-bottom:1rem}
+.hero-img-content p{font-size:13px;color:rgba(255,255,255,.4);letter-spacing:.1em}
+
+/* TRUST LOGOS */
+.trust-bar{padding:3rem 6vw;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg)}
+.trust-inner{max-width:1100px;margin:0 auto;text-align:center}
+.trust-label{font-size:12px;color:var(--ink3);font-weight:600;letter-spacing:.1em;margin-bottom:2rem}
+.trust-logos{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;align-items:center}
+.trust-logo{font-family:var(--display);font-size:15px;font-weight:800;color:var(--bg3);letter-spacing:-.02em}
+
+/* SERVICES */
+.section{padding:6rem 6vw;max-width:1200px;margin:0 auto}
+.divider{height:1px;background:var(--border);margin:0 6vw}
+.sec-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--purple);background:var(--purple3);border:1px solid var(--purpleb);padding:.3rem .9rem;border-radius:100px;margin-bottom:1rem}
+.sec-title{font-family:var(--display);font-size:clamp(2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1.08;margin-bottom:1rem}
+.sec-sub{font-size:16px;color:var(--ink2);line-height:1.75;max-width:540px;margin-bottom:3rem}
+
+.services-list{display:flex;flex-direction:column;gap:1.5rem}
+.svc-card{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;transition:all .25s;cursor:pointer}
+.svc-card:hover{border-color:var(--purpleb);box-shadow:var(--shadow2);transform:translateY(-3px)}
+.svc-tag{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--purple);margin-bottom:.75rem}
+.svc-title{font-family:var(--display);font-size:1.6rem;font-weight:800;letter-spacing:-.04em;margin-bottom:.75rem}
+.svc-desc{font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:1.5rem}
+.svc-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--purple);font-weight:700;font-size:14px;text-decoration:none;transition:gap .2s}
+.svc-link:hover{gap:.75rem}
+.svc-visual{background:linear-gradient(135deg,var(--dark),var(--dark2));border-radius:14px;height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
+.svc-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 40%,rgba(91,79,255,.25),transparent 60%)}
+.svc-bullets{display:flex;flex-direction:column;gap:.6rem;margin-top:1rem}
+.svc-bullet{display:flex;align-items:flex-start;gap:.6rem;font-size:13.5px;color:var(--ink2);line-height:1.5}
+.svc-bullet::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;margin-top:.1rem}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.team-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:1.75rem;text-align:center;transition:all .22s}
+.team-card:hover{border-color:var(--purpleb);box-shadow:var(--shadow);transform:translateY(-4px)}
+.team-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;border:3px solid rgba(91,79,255,.2)}
+.team-name{font-family:var(--display);font-size:17px;font-weight:800;margin-bottom:.25rem}
+.team-role{font-size:12px;color:var(--ink3);margin-bottom:.75rem;font-weight:500}
+.team-bio{font-size:13px;color:var(--ink2);line-height:1.6}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:.75rem;max-width:800px;margin:0 auto}
+.faq-item{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;font-weight:700;color:var(--dark);transition:background .2s}
+.faq-q:hover{background:var(--bg2)}
+.faq-arrow{font-size:18px;color:var(--purple);transition:transform .25s;flex-shrink:0}
+.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:14px;color:var(--ink2);line-height:1.75}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+.faq-item.open .faq-a{display:block}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--purple),var(--purple-dark));padding:6rem 6vw;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'IA';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:30vw;font-weight:800;color:rgba(255,255,255,.04);pointer-events:none;line-height:1}
+.cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto}
+.cta-title{font-family:var(--display);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.05em;color:#fff;margin-bottom:1rem;line-height:1.05}
+.cta-sub{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:2rem;line-height:1.75}
+.btn-white{background:#fff;color:var(--purple);padding:1.1rem 2.5rem;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+
+footer{background:var(--dark);padding:2.5rem 6vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:var(--display);font-size:17px;font-weight:800;background:linear-gradient(135deg,var(--purple2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+
+@media(max-width:900px){
+  .svc-card,.team-grid{grid-template-columns:1fr}
+  .svc-card{grid-template-columns:1fr}
+  nav .nav-center{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Zénith IA Maroc</span>
+  <div class="nav-center">
+    <a href="#services">Services</a>
+    <a href="#equipe">Équipe</a>
+    <a href="#faq">F.A.Q</a>
+  </div>
+  <div class="nav-right">
+    <a href="reda_site_merged.html" class="nav-back">← Portfolio</a>
+    <a href="#" class="nav-cta">Prendre rendez-vous</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🇲🇦 MAROC · IA SUR MESURE · CASABLANCA</div>
+    <h1>Prenez de l'avance avec des <span>solutions IA sur mesure.</span></h1>
+    <p class="hero-sub">Découvrez comment l'intelligence artificielle peut révolutionner votre entreprise au Maroc et explorez nos solutions pour une transformation digitale réussie.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-main">Prendre rendez-vous →</a>
+      <a href="#services" class="btn-outline">Nos services ↓</a>
+    </div>
+    <div class="hero-img">
+      <div class="hero-img-content">
+        <div>🤖</div>
+        <p>INTELLIGENCE ARTIFICIELLE · MAROC · 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-label">ILS NOUS FONT CONFIANCE AU MAROC</div>
+    <div class="trust-logos">
+      <span class="trust-logo">OCP GROUP</span>
+      <span class="trust-logo">MAROC TELECOM</span>
+      <span class="trust-logo">BMCE BANK</span>
+      <span class="trust-logo">ATTIJARIWAFA</span>
+      <span class="trust-logo">CIH BANK</span>
+      <span class="trust-logo">LYDEC</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="divider"></div>
+<div class="section" id="services">
+  <div style="text-align:center;margin-bottom:3rem">
+    <div class="sec-tag">SERVICES</div>
+    <h2 class="sec-title" style="max-width:600px;margin:0 auto 1rem">Intelligence artificielle,<br>expertise humaine.</h2>
+    <p class="sec-sub" style="margin:0 auto 0">Réinventez votre façon de travailler grâce à nos services d'IA, conçus pour optimiser vos processus et libérer du temps pour l'innovation au Maroc.</p>
+  </div>
+  <div class="services-list">
+    <div class="svc-card">
+      <div>
+        <div class="svc-tag">AUDIT IA</div>
+        <div class="svc-title">Analysez, optimisez, et progressez avec l'IA.</div>
+        <div class="svc-desc">Nous identifions vos tâches chronophages et répétitives pour vous proposer des solutions d'automatisation adaptées à votre entreprise marocaine, améliorant à la fois votre efficacité et votre rentabilité.</div>
+        <div class="svc-bullets">
+          <div class="svc-bullet">Analyse complète de vos processus métier</div>
+          <div class="svc-bullet">Identification des gains d'efficacité rapides</div>
+          <div class="svc-bullet">Rapport détaillé avec plan d'action prioritaire</div>
+          <div class="svc-bullet">Benchmarking avec les standards internationaux</div>
+        </div>
+        <br>
+        <a href="#" class="svc-link">Demander une démonstration →</a>
+      </div>
+      <div class="svc-visual">🔍</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-visual">🤖</div>
+      <div>
+        <div class="svc-tag">AUTOMATISATION</div>
+        <div class="svc-title">Automatisez vos tâches répétitives.</div>
+        <div class="svc-desc">Déployez des agents IA qui travaillent 24h/24 pour votre entreprise — traitement des emails, gestion des données, reporting automatique, service client. Adapté aux réalités du marché marocain (Darija, français, arabe).</div>
+        <div class="svc-bullets">
+          <div class="svc-bullet">Agents IA multilingues (FR/AR/Darija)</div>
+          <div class="svc-bullet">Intégration CRM et ERP existants</div>
+          <div class="svc-bullet">Automatisation des flux documentaires</div>
+          <div class="svc-bullet">Dashboard de suivi en temps réel</div>
+        </div>
+        <br>
+        <a href="#" class="svc-link">Demander une démonstration →</a>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div>
+        <div class="svc-tag">FORMATION IA</div>
+        <div class="svc-title">Formez vos équipes à l'IA.</div>
+        <div class="svc-desc">Vos collaborateurs sont votre premier actif. Nous les formons à utiliser l'IA au quotidien — de la prise en main des outils à l'intégration dans leurs flux de travail. Formations sur-mesure en présentiel au Maroc.</div>
+        <div class="svc-bullets">
+          <div class="svc-bullet">Ateliers pratiques en entreprise</div>
+          <div class="svc-bullet">Formation ChatGPT, Copilot, outils IA métier</div>
+          <div class="svc-bullet">Certification interne pour vos équipes</div>
+          <div class="svc-bullet">Accompagnement post-formation sur 3 mois</div>
+        </div>
+        <br>
+        <a href="#" class="svc-link">Demander une démonstration →</a>
+      </div>
+      <div class="svc-visual">📚</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-visual">💬</div>
+      <div>
+        <div class="svc-tag">CHATBOT & AGENTS</div>
+        <div class="svc-title">Votre assistant IA, disponible 24h/24.</div>
+        <div class="svc-desc">Déployez un chatbot intelligent sur votre site, WhatsApp ou votre application mobile — entraîné sur vos données, capable de répondre en français, arabe et darija. Parfait pour le service client, la prise de RDV et la qualification de leads.</div>
+        <div class="svc-bullets">
+          <div class="svc-bullet">Chatbot trilingue (FR/AR/Darija)</div>
+          <div class="svc-bullet">Intégration WhatsApp Business</div>
+          <div class="svc-bullet">Qualification automatique des leads</div>
+          <div class="svc-bullet">Handoff humain intelligent</div>
+        </div>
+        <br>
+        <a href="#" class="svc-link">Demander une démonstration →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<div class="divider"></div>
+<div class="section" id="equipe">
+  <div class="sec-tag">ÉQUIPE</div>
+  <h2 class="sec-title">L'équipe derrière<br>Zénith IA Maroc.</h2>
+  <p class="sec-sub">Des experts en IA et en business marocain, dédiés à votre transformation digitale.</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">👨‍💼</div>
+      <div class="team-name">Mohamed Reda Hmamouchi</div>
+      <div class="team-role">Co-Fondateur · Stratégie & Business Dev</div>
+      <div class="team-bio">Étudiant PCSI, entrepreneur marocain. Expert en automatisation et déploiement d'agents IA pour PME marocaines. Fondateur de WebCraft30 et VIANO.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">👨‍💻</div>
+      <div class="team-name">Co-Fondateur Tech</div>
+      <div class="team-role">Co-Fondateur · Développement IA</div>
+      <div class="team-bio">Expert en machine learning et développement d'applications IA. Spécialisé dans l'adaptation des modèles au contexte marocain et aux langues locales.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">👩‍🎨</div>
+      <div class="team-name">Consultante Maroc</div>
+      <div class="team-role">Consultante · Transformation Digitale</div>
+      <div class="team-bio">10 ans d'expérience en conseil auprès des grandes entreprises marocaines. Expert en conduite du changement et adoption des nouvelles technologies.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="divider"></div>
+<div class="section" id="faq" style="max-width:1200px">
+  <div style="text-align:center;margin-bottom:3rem">
+    <div class="sec-tag">F.A.Q</div>
+    <h2 class="sec-title">Questions fréquentes.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Vos solutions fonctionnent-elles en darija et en arabe ?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">Oui. Nos agents IA sont spécifiquement entraînés pour comprendre et répondre en français, arabe classique et darija marocaine. C'est une priorité pour nous — l'IA doit parler la langue de vos clients.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Combien coûte un projet d'automatisation IA ?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">Les prix varient selon la complexité du projet. Un audit IA commence à 5 000 DH. Une solution d'automatisation complète se situe entre 15 000 et 80 000 DH. Nous proposons toujours un premier appel gratuit pour évaluer vos besoins.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Combien de temps pour voir les premiers résultats ?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">Les premiers gains de productivité sont visibles dès les 2 à 4 premières semaines. Un déploiement complet prend généralement 4 à 8 semaines selon la complexité de votre environnement informatique.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Intervenez-vous dans toutes les villes du Maroc ?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">Oui. Nous intervenons à Casablanca, Rabat, Marrakech, Tanger, Agadir et dans toutes les grandes villes marocaines. Nous proposons également des sessions en distanciel pour les entreprises en dehors de ces zones.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Mes données sont-elles sécurisées ?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">La sécurité des données est notre priorité. Nous travaillons avec des contrats de confidentialité stricts et des infrastructures cloud sécurisées. Nous respectons les réglementations marocaines en matière de protection des données personnelles.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Proposez-vous un support après le déploiement ?
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">Oui. Tous nos projets incluent 3 mois de support post-déploiement. Nous proposons également des contrats de maintenance mensuelle pour assurer la performance continue de vos solutions IA.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-bottom:.75rem">PRÊT À COMMENCER ?</div>
+    <h2 class="cta-title">Transformez votre<br>entreprise avec l'IA.</h2>
+    <p class="cta-sub">Réservez un appel de découverte gratuit avec notre équipe. Nous analysons votre situation et vous proposons un plan d'action concret sous 48h.</p>
+    <a href="#" class="btn-white">Prendre rendez-vous gratuitement →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">Zénith IA Maroc</span>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#equipe">Équipe</a>
+    <a href="#faq">FAQ</a>
+    <a href="reda_site_merged.html">← Portfolio MRH</a>
+  </div>
+  <span class="footer-copy">© 2025 Zénith IA Maroc</span>
+</footer>
+
+<script>
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
